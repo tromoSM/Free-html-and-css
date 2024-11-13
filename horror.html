@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Image</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;  /* Make the image take up the full width of the container */
+            height: auto; /* Maintain the image's aspect ratio */
+            transform: translateY(-27px); /* Adjust the image position slightly */
+        }
+
+        p {
+            padding-left: 50px;
+            padding-right: 50px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: 0.6s;
+           
+        }  p:hover {
+            padding-left: 50px;
+            padding-right: 50px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: 2s;
+            transition-delay: 2s;
+            filter:drop-shadow(0px 0px 9px #ff0000)
+            
+           
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .movie-description {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .short-content {
+            font-size: 1rem;
+            color: #333;
+            transition: 0.6s;
+        }
+
+        .more-content {
+            height: 0;
+            overflow: hidden;
+            font-size: 1rem;
+            color: #333;
+            transition: height 0.5s ease-out;
+        }
+
+        .toggle-button {
+            background-color: #333;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: 0.6s;
+        }
+
+        .toggle-button:hover {
+            background-color: #555;
+            transition: 0.6s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.555);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;  /* Centering the button horizontally */
+            margin-top: 20px;  /* Adding margin space */
+            transition: 0.6s;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.308);
+            padding: 10px;
+           
+        
+        }
+
+        li {
+            flex: 1;
+        }
+
+        li a {
+            display: block;
+            color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        li a:hover {
+            background-color: #9990fc;
+            color: #ffffff;
+        }
+
+        .active {
+            background-color: #8543ff;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.555);
+        }
+
+        li:not(:last-child) {
+            border-right: 0px solid #e0e0e0;
+            font: arial;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        .availability {
+            margin: 35px auto;
+            max-width: 620px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 2%;
+            padding-top: 50px;
+        }
+
+        .availability li {
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="horror .png" alt="Placeholder Image">
+
+    <p>Ah, got it! You want a short description that explains what horror movies are, for example, on a landing page or in a movie database. Here's a concise and clear description of horror movies:
+        Horror movies are designed to evoke fear, suspense, and excitement, often featuring supernatural elements, monsters, psychological terror, or slasher villains. They explore the darkest corners of the human psyche and bring nightmares to life on screen. From eerie atmospheres and shocking twists to heart-pounding thrills and gut-wrenching scares, horror films captivate audiences by challenging their senses and imagination. Whether it's a haunted house, a deranged killer, or an ancient curse, horror movies push the boundaries of fear and offer a chilling escape from reality.
+    </p>
+
+    <div class="more-content" id="moreContent">
+        <h2>Disclaimer</h2>
+        <p>
+            The content presented on this website is intended for entertainment purposes only. While we strive to provide accurate and up-to-date information regarding horror movies, trailers, reviews, and news, we cannot guarantee the completeness or accuracy of all content. Viewer discretion is advised, as some material may contain graphic violence, disturbing images, and other intense content that may not be suitable for all audiences. If you are sensitive to such content, we recommend reviewing individual movie ratings, warnings, and viewer advisories before engaging with specific material.
+        </p>
+    </div>
+
+    <div class="button-container">
+        <button class="toggle-button" id="toggleButton" onclick="toggleContent()">Disclaimer</button>
+    </div>
+    <h1>Best Ratest Horror Movies</h1>
+
+    <ul class="availability">
+        <li>The Shining (1980) - <span style="color: rgb(204, 150, 0);">IMDb: 8.4/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 86%</span></li>
+        <li>Hereditary (2018) - <span style="color: rgb(204, 150, 0);">IMDb: 7.3/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 89%</span></li>
+        <li>Get Out (2017) - <span style="color: rgb(204, 150, 0);">IMDb: 7.7/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 98%</span></li>
+        <li>The Exorcist (1973) - <span style="color: rgb(204, 150, 0);">IMDb: 8.0/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 84%</span></li>
+        <li>Psycho (1960) - <span style="color: rgb(204, 150, 0);">IMDb: 8.5/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 96%</span></li>
+        <li>A Nightmare on Elm Street (1984) - <span style="color: rgb(204, 150, 0);">IMDb: 7.5/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 95%</span></li>
+        <li>The Babadook (2014) - <span style="color: rgb(204, 150, 0);">IMDb: 6.8/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 98%</span></li>
+        <li>It Follows (2014) - <span style="color: rgb(204, 150, 0);">IMDb: 6.8/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 96%</span></li>
+        <li>The Witch (2015) - <span style="color: rgb(204, 150, 0);">IMDb: 6.8/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 90%</span></li>
+        <li>Rosemary's Baby (1968) - <span style="color: rgb(204, 150, 0);">IMDb: 8.0/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 96%</span></li>
+        <li>The Conjuring (2013) - <span style="color: rgb(204, 150, 0);">IMDb: 7.5/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 86%</span></li>
+        <li>Alien (1979) - <span style="color: rgb(204, 150, 0);">IMDb: 8.4/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 98%</span></li>
+        <li>Don't Look Now (1973) - <span style="color: rgb(204, 150, 0);">IMDb: 7.9/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 88%</span></li>
+        <li>The Cabin in the Woods (2012) - <span style="color: rgb(204, 150, 0);">IMDb: 7.0/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 91%</span></li>
+        <li>Midsommar (2019) - <span style="color: rgb(204, 150, 0);">IMDb: 7.1/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 83%</span></li>
+        <li>Jaws (1975) - <span style="color: rgb(204, 150, 0);">IMDb: 8.0/10</span>, <span style="color: rgb(231, 0, 0);">Rotten Tomatoes: 98%</span></li>
+        
+    </ul>
+
+    <script>
+        function toggleContent() {
+            var moreContent = document.getElementById("moreContent");
+            var toggleButton = document.getElementById("toggleButton");
+
+            if (moreContent.style.height === "0px" || moreContent.style.height === "") {
+                moreContent.style.height = moreContent.scrollHeight + "px"; 
+                toggleButton.textContent = "minimize Disclaimer";
+            } else {
+                moreContent.style.height = "0px";
+                toggleButton.textContent = "Read the disclaimer again";
+            }
+        }
+    </script>
+
+</body>
+</html>
